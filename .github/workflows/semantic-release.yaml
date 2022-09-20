@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: Run commitlint
+        uses: wagoid/commitlint-github-action@v5
+
       - name: Create tag and release
         run: npx semantic-release
         env:
