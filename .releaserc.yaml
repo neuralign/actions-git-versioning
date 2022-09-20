@@ -1,0 +1,15 @@
+---
+branches:
+  - main
+plugins:
+  - '@semantic-release/commit-analyzer'
+  - '@semantic-release/release-notes-generator'
+  - '@semantic-release/github'
+analyzeCommits:
+  - path: '@semantic-release/commit-analyzer'
+    preset: conventionalcommits
+    presetConfig: true
+generateNotes:
+  - path: '@semantic-release/release-notes-generator'
+    preset: conventionalcommits
+    presetConfig: true
