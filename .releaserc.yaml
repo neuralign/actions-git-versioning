@@ -1,15 +1,33 @@
 ---
 branches:
   - main
+
+ci: true
+
+# Global plugin options, passed to all plugins.
+preset: conventionalcommits
+
+# Verify that you meet all the required conditions to proceed with the release...
+verifyConditions:
+  - '@semantic-release/release-notes-generator'
+  - '@semantic-release/github'
+
 plugins:
   - '@semantic-release/commit-analyzer'
   - '@semantic-release/release-notes-generator'
   - '@semantic-release/github'
+
 analyzeCommits:
-  - path: '@semantic-release/commit-analyzer'
-    preset: conventionalcommits
-    presetConfig: true
+  - path: '@semantic-release/comit-analyzer'
+  
 generateNotes:
   - path: '@semantic-release/release-notes-generator'
-    preset: conventionalcommits
-    presetConfig: true
+    writerOpts:
+      groupBy: 'type'
+      commitGroupsSort: 'title'
+      comitsSort: 'header'
+    linkCompare: true
+    linkReferences: true
+
+publish:
+  - path: '@semantic-release/github'
