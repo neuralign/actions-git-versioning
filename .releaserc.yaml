@@ -17,14 +17,14 @@ plugins:
   - '@semantic-release/github'
 
 analyzeCommits:
-  - path: '@semantic-release/comit-analyzer'
+  - path: '@semantic-release/commit-analyzer'
   
 generateNotes:
   - path: '@semantic-release/release-notes-generator'
     writerOpts:
       groupBy: 'type'
       commitGroupsSort: 'title'
-      comitsSort: 'header'
+      commitsSort: 'header'
     linkCompare: true
     linkReferences: true
 
