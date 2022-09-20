@@ -9,7 +9,6 @@ preset: conventionalcommits
 
 # Verify that you meet all the required conditions to proceed with the release...
 verifyConditions:
-  - '@semantic-release/release-notes-generator'
   - '@semantic-release/github'
 
 plugins:
