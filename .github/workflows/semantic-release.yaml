@@ -28,6 +28,6 @@ jobs:
         uses: wagoid/commitlint-github-action@v5
 
       - name: Create tag and release
-        run: npx semantic-release
+        run: npm install -g conventional-changelog-cli && npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
